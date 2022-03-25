@@ -1,0 +1,37 @@
+{
+  "compilerOptions": {
+    "target": "esNext",
+    "module": "esNext",
+    "moduleResolution": "node",
+    "jsx": "react",
+    "declaration": true,
+    "pretty": true,
+    "rootDir": "src",
+    "sourceMap": false,
+    "strict": true,
+    "esModuleInterop": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "noImplicitReturns": true,
+    "noImplicitAny": true,
+    "skipLibCheck": true,
+    "noFallthroughCasesInSwitch": true,
+    "outDir": "types",
+    "lib": ["es2018", "dom"],
+    "importHelpers": false,
+    "skipDefaultLibCheck": true,
+    "allowJs": false,
+    "emitDeclarationOnly": true,
+    "checkJs": false
+  },
+  "exclude": [
+    "node_modules",
+    "es",
+    "umd",
+    "__tests__",
+    "jest.config.ts",
+    "jest.config.*.ts",
+    "vite.config.ts",
+    "types"
+  ]
+}

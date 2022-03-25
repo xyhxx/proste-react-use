@@ -1,0 +1,14 @@
+{
+  "extends": [
+    "proste/reactTS.js",
+    "eslint-config-prettier"
+  ],
+  "globals": {
+    "TaroGeneral": "readonly"
+  },
+  "parserOptions": {
+    "project": "./tsconfig.json",
+    "tsconfigRootDir": ".",
+    "warnOnUnsupportedTypeScriptVersion": true
+  }
+}

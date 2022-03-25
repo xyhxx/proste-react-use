@@ -1,0 +1,15 @@
+node_modules
+build
+public
+*.config.js
+*.config.ts
+*/reportWebVitals.ts
+*.d.ts
+coverage/
+.config.ts
+tsconfig.json
+*.json
+vite.config.ts
+es/
+umd/
+__tests__
