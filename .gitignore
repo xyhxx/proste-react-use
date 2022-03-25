@@ -67,6 +67,7 @@ typings/
 # build output
 lib/
 es/
+umd/
 types/
 
 .DS_Store
