@@ -14,7 +14,7 @@ import { EffectCallback, useLayoutEffect, useRef } from 'react';
  *  ...
  * })
  */
-function useBeforeMount(effect: EffectCallback) {
+function useLayoutMounted(effect: EffectCallback) {
   const isMount = useRef(false);
 
   useLayoutEffect(function () {
@@ -26,4 +26,4 @@ function useBeforeMount(effect: EffectCallback) {
   }, []);
 }
 
-export default useBeforeMount;
+export default useLayoutMounted;

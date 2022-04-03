@@ -1,5 +1,5 @@
 import { renderHook } from '@testing-library/react-hooks';
-import useBeforeMount from '../src/useBeforeMount';
+import useLayoutMounted from '../src/useLayoutMounted';
 
 const callback = jest.fn();
 
@@ -9,7 +9,7 @@ beforeEach(function () {
 
 test('可以正常触发', function () {
   renderHook(function () {
-    useBeforeMount(callback);
+    useLayoutMounted(callback);
   });
 
   expect(callback).toHaveBeenCalledTimes(1);
@@ -17,7 +17,7 @@ test('可以正常触发', function () {
 
 test('只触发一次', function () {
   const { rerender } = renderHook(function () {
-    useBeforeMount(callback);
+    useLayoutMounted(callback);
   });
 
   expect(callback).toHaveBeenCalledTimes(1);
@@ -29,7 +29,7 @@ test('只触发一次', function () {
 
 test('卸载组件不触发', function () {
   const { unmount } = renderHook(function () {
-    useBeforeMount(callback);
+    useLayoutMounted(callback);
   });
 
   expect(callback).toHaveBeenCalledTimes(1);

@@ -16,13 +16,14 @@ export default defineConfig({
       fileName: format => `${format}/index.js`,
     },
     rollupOptions: {
-      external: ['react', '@tarojs/taro', 'lodash', 'use-context-selector', 'events'],
+      external: ['react', '@tarojs/taro', 'lodash', 'use-context-selector', 'events', 'dayjs'],
       output: {
         globals: {
           react: 'react',
           '@tarojs/taro': '@tarojs/taro',
           lodash: 'lodash',
           events: 'eventsEmitter',
+          dayjs: 'dayjs',
           'use-context-selector': 'use-context-selector',
         },
       },

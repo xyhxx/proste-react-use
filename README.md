@@ -2,6 +2,38 @@
 
 更多使用方法可以<a href="https://github.com/xyhxx/proste-react-use/tree/main/__tests__">查看测试</a>中的示例
 
+## useCountDown
+
+> 倒计时 hook
+
+```typescript
+function useCountDown(options?: {
+  targetDate?: DateType;
+  days?: number;
+  hours?: number;
+  minutes?: number;
+  seconds?: number;
+  interval?: number;
+  onChange?: (
+    time: number,
+    parseTime: {
+      days: number;
+      hours: number;
+      minutes: number;
+      seconds: number;
+      milliseconds: number;
+    },
+  ) => void;
+  onComplete?: () => void;
+}): {
+  days: number;
+  hours: number;
+  minutes: number;
+  seconds: number;
+  milliseconds: number;
+};
+```
+
 ## useSuspense
 
 > 配合 Suspense 组件使用 可以使用任意的 Promise 函数

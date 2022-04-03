@@ -1,5 +1,5 @@
 import React, { FC, Suspense, useEffect, useReducer, useState } from 'react';
-import { fireEvent, render } from '@testing-library/react';
+import { fireEvent, render, act } from '@testing-library/react';
 import useSuspense from '../src/useSuspense';
 
 const fn = jest.fn();
@@ -38,7 +38,7 @@ test('测试suspense是否正常', async function () {
 
 test('key值不变rerender后不会重新触发内容,key值为一个string类型', async function () {
   const App: FC = function () {
-    const data = useSuspense('key', async function () {
+    const data = useSuspense('testKey', async function () {
       return Math.random();
     });
     const [, forceUpdate] = useReducer((num: number) => num + 1, 0);
@@ -59,12 +59,15 @@ test('key值不变rerender后不会重新触发内容,key值为一个string类�
     </Suspense>,
   );
 
-  const text = await findByTestId('data');
+  let text = await findByTestId('data');
   const btn = await findByTestId('btn');
 
   const textHtml = text.innerHTML;
 
-  fireEvent.click(btn);
+  await act(async function () {
+    fireEvent.click(btn);
+    text = await findByTestId('data');
+  });
 
   expect(text.innerHTML).toBe(textHtml);
 
@@ -99,8 +102,11 @@ test('key值不变rerender后不会重新触发内容,key值为一个stringArray
 
   const textHtml = text.innerHTML;
 
-  fireEvent.click(btn);
-  text = await findByTestId('data');
+  await act(async function () {
+    fireEvent.click(btn);
+    text = await findByTestId('data');
+  });
+
   expect(text.innerHTML).toBe(textHtml);
 
   expect(fn).toBeCalledTimes(1);
@@ -138,16 +144,21 @@ test('key值修改后,内容对应调整,key为array类型', async function () {
   const btn = await findByTestId('btn');
 
   let textHtml = text.innerHTML;
-
   expect(text.innerHTML).toBe(textHtml);
 
-  fireEvent.click(btn);
-  text = await findByTestId('data');
+  await act(async function () {
+    fireEvent.click(btn);
+    text = await findByTestId('data');
+  });
+
   expect(text.innerHTML).not.toBe(textHtml);
   textHtml = text.innerHTML;
 
-  fireEvent.click(btn);
-  text = await findByTestId('data');
+  await act(async function () {
+    fireEvent.click(btn);
+    text = await findByTestId('data');
+  });
+
   expect(text.innerHTML).not.toBe(textHtml);
 
   expect(fn).toBeCalledTimes(3);
@@ -155,7 +166,7 @@ test('key值修改后,内容对应调整,key为array类型', async function () {
 
 test('key值修改后,内容对应调整,key为string类型', async function () {
   const App: FC = function () {
-    const [key, setKey] = useState('key');
+    const [key, setKey] = useState('valuekey');
 
     const data = useSuspense(key, async function () {
       return key;
@@ -184,15 +195,19 @@ test('key值修改后,内容对应调整,key为string类型', async function () 
   let text = await findByTestId('data');
   const btn = await findByTestId('btn');
 
-  expect(text.innerHTML).toBe('key');
+  expect(text.innerHTML).toBe('valuekey');
 
-  fireEvent.click(btn);
-  text = await findByTestId('data');
-  expect(text.innerHTML).toBe('key1');
+  await act(async function () {
+    fireEvent.click(btn);
+    text = await findByTestId('data');
+  });
+  expect(text.innerHTML).toBe('valuekey1');
 
-  fireEvent.click(btn);
-  text = await findByTestId('data');
-  expect(text.innerHTML).toBe('key11');
+  await act(async function () {
+    fireEvent.click(btn);
+    text = await findByTestId('data');
+  });
+  expect(text.innerHTML).toBe('valuekey11');
 
   expect(fn).toBeCalledTimes(3);
 });
