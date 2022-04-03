@@ -36,7 +36,8 @@ function useCountDown(options?: {
 
 ## useSuspense
 
-> 配合 Suspense 组件使用 可以使用任意的 Promise 函数
+> 配合 Suspense 组件使用 可以使用任意的 Promise 函数 key 需要是一个唯一值，如果你想复用父组件的信息可以使用和父组件相同
+> 的 key
 
 ```typescript
 useSuspense<R>(key: string | unknown[], fn: () => Promise<R>): R
