@@ -26,7 +26,7 @@ function useClipboard() {
         let copyText = text;
 
         if (!copyText) {
-          copyText = (ref.current as unknown as HTMLElement)?.getAttribute('data-copy');
+          copyText = (ref.current as unknown as HTMLInputElement)?.value;
         }
 
         if (!copyText) {

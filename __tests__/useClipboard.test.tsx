@@ -48,9 +48,7 @@ test('测试通过dom复制信息正常', async function () {
     return (
       <>
         <p data-testid='clipboard_data'>{clipboard}</p>
-        <p data-testid='p_dom' ref={ref} data-copy='test-dom'>
-          test-dom
-        </p>
+        <input ref={ref} data-testid='input_dom' />
         <button data-testid='copy_dom' onClick={() => copyToClipboard()}>
           copyDom
         </button>
@@ -69,6 +67,7 @@ test('测试通过dom复制信息正常', async function () {
   const copyDom = await findByTestId('copy_dom');
   const copyBtn = await findByTestId('copy');
   const setBtn = await findByTestId('set_clipboard');
+  const input = await findByTestId('input_dom');
 
   act(function () {
     fireEvent.click(setBtn);
@@ -80,13 +79,14 @@ test('测试通过dom复制信息正常', async function () {
   expect(text).toBe('');
 
   await act(async function () {
+    fireEvent.input(input, { target: { value: 'test_demo' } });
     fireEvent.click(copyDom);
     fireEvent.click(setBtn);
   });
 
   clipData = await findByTestId('clipboard_data');
   const text2 = clipData.innerHTML;
-  expect(text2).toBe('test-dom');
+  expect(text2).toBe('test_demo');
 
   await act(async function () {
     fireEvent.click(copyBtn);
@@ -96,4 +96,14 @@ test('测试通过dom复制信息正常', async function () {
   clipData = await findByTestId('clipboard_data');
   const text3 = clipData.innerHTML;
   expect(text3).toBe('test-arg');
+
+  await act(async function () {
+    fireEvent.input(input, { target: { value: 'input_clipbard' } });
+    fireEvent.click(copyDom);
+    fireEvent.click(setBtn);
+  });
+
+  clipData = await findByTestId('clipboard_data');
+  const text4 = clipData.innerHTML;
+  expect(text4).toBe('input_clipbard');
 });

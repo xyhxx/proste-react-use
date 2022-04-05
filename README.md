@@ -2,6 +2,21 @@
 
 更多使用方法可以<a href="https://github.com/xyhxx/proste-react-use/tree/main/__tests__">查看测试</a>中的示例
 
+## useClipboard
+
+> 粘贴板 hook 可以通过 ref 绑定某个 input 节点复制对应的 value 值 这个在非受控节点上会非常有用 data-copy 或者通过
+> copyToClipboard 复制到粘贴板
+
+```typescript
+function useClipboard(): readonly [
+  React.MutableRefObject<null>,
+  {
+    readonly copyToClipboard: (text?: string | number | null | undefined) => Promise<string | number>;
+    readonly getClipboard: () => Promise<string>;
+  },
+];
+```
+
 ## useCountDown
 
 > 倒计时 hook
