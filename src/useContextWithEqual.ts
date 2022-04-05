@@ -3,7 +3,7 @@
  * @FilePath: /proste-react-use/src/useContextWithEqual.ts
  */
 
-import { isEqual } from 'lodash';
+import isEqual from 'fast-deep-equal';
 import { useMemo } from 'react';
 import useLatest from './useLatest';
 import { Context, useContextSelector } from 'use-context-selector';
