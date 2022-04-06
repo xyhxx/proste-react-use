@@ -5,7 +5,7 @@ More usage methods can be <a href="https://github.com/xyhxx/proste-react-use/tre
 
 - [`useIntersectionObserver`](./docs/useIntersectionObserver/cn.md),[`useIntersectionObserverState`](./docs/useIntersectionObserverState/cn.md)
 
-`Create an API for IntersectionObserver. The difference between useIntersectionObserver and useIntersectionObserver state is that useIntersectionObserver obtains information through callback, and useIntersectionObserver state will return the callback content as state. You can interrupt listening and resume listening.`
+`Create an API for IntersectionObserver. The difference between useIntersectionObserver and useIntersectionObserver state is that useIntersectionObserver obtains information through callback, and useIntersectionObserver state will return the callback content as state. Both can interrupt listening and resume listening.`
 
 - [`useClipboard`](./useClipboard/en.md)
 

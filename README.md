@@ -6,7 +6,7 @@
 
 - [`useIntersectionObserver`](./docs/useIntersectionObserver/cn.md),[`useIntersectionObserverState`](./docs/useIntersectionObserverState/cn.md)
 
-`创建一个IntersectionObserver的API，useIntersectionObserver和useIntersectionObserverState的区别是useIntersectionObserver通过回调获取信息，useIntersectionObserverState会将回调的内容作为state返回。可以中断监听和恢复监听。`
+`创建一个IntersectionObserver的API，useIntersectionObserver和useIntersectionObserverState的区别是useIntersectionObserver通过回调获取信息，useIntersectionObserverState会将回调的内容作为state返回。两者都可以中断监听和恢复监听。`
 
 - [`useClipboard`](./docs/useClipboard/cn.md)
 
