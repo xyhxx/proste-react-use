@@ -6,7 +6,7 @@
 
 - [`useClipboard`](./docs/useClipboard/cn.md)
 
-`可以通过 ref 绑定某个 input 节点复制对应的 value 值， 这个在非受控节点 上会非常有用 data-copy。 或者通过 copyToClipboard 复制到粘贴板`
+`可以通过 ref 绑定某个 input 节点复制对应的 value 值， 这个在非受控节点 上会非常有用。 或者通过 copyToClipboard 复制到粘贴板`
 
 - [`useContextWithEqual`](./docs/useContextWithEqual/cn.md)
 
