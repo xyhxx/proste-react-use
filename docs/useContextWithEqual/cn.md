@@ -1,10 +1,15 @@
 ## useContextWithEqual
 
-> 比较相同 contexthook 判断返回数据是否有变化进行渲染 依赖 use-context-selector 使用 use-context-selector 的
-> createContext 创建 congtext
+> 比较相同 contexthook 判断返回数据是否有变化进行渲染 依赖
+> <a href="https://github.com/dai-shi/use-context-selector">use-context-selector</a> 使用
+> <a href="https://github.com/dai-shi/use-context-selector">use-context-selector</a> 的 createContext 创建 context
 
 ```typescript
 function useContextWithEqual<T, R>(context: Context<T>, selector: (state: T) => R): R;
+```
+
+```js
+npm install use-context-selector
 ```
 
 ```jsx

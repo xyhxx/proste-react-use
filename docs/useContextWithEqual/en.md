@@ -1,10 +1,15 @@
 ## useContextWithEqual
 
-> Compare the same contexthook to judge whether the returned data has changed for rendering, and rely on the use context
-> selector to create a congtext using the createcontext of the use context selector
+> Compare the same contexthook to judge whether the returned data has changed for rendering, and rely on the
+> <a href="https://github.com/dai-shi/use-context-selector">use-context-selector</a> to create a context using the
+> createContext of the <a href="https://github.com/dai-shi/use-context-selector">use-context-selector</a>
 
 ```typescript
 function useContextWithEqual<T, R>(context: Context<T>, selector: (state: T) => R): R;
+```
+
+```js
+npm install use-context-selector
 ```
 
 ```jsx

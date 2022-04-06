@@ -13,7 +13,8 @@ More usage methods can be <a href="https://github.com/xyhxx/proste-react-use/tre
 
 - [`useContextWithEqual`](./useContextWithEqual/en.md)
 
-`Compare the same contexthook to judge whether the returned data has changed for rendering, and rely on the use contextselector to create a congtext using the createcontext of the use context selector`
+`Comparing the same context to judge whether the returned data has changed for rendering depends on use-context-selector. Create context using createcontext of use-context-selector. Please download`
+[`use-context-selector`](https://github.com/dai-shi/use-context-selector)` before use`
 
 - [`useCountDown`](./useCountDown/en.md)
 

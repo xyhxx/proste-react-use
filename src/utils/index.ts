@@ -7,3 +7,4 @@ export { default as isString } from './isString';
 export { default as isFunction } from './isFunction';
 export { default as getRealType } from './getRealType';
 export { default as isEqual } from './isEqual';
+export { default as EventBus } from './event';

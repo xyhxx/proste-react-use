@@ -1,6 +1,6 @@
 {
   "name": "proste-react-use",
-  "version": "2.3.0",
+  "version": "3.0.0",
   "description": "Eeasy to use react hooks",
   "license": "MIT",
   "author": "xyh xx<xyh050968@gmail.com>",
@@ -48,9 +48,7 @@
   },
   "dependencies": {
     "dayjs": "^1.11.0",
-    "events": "^3.3.0",
-    "fast-deep-equal": "^3.1.3",
-    "use-context-selector": "^1.3.9"
+    "fast-deep-equal": "^3.1.3"
   },
   "devDependencies": {
     "@tarojs/taro": "^3.4.3",
@@ -83,6 +81,7 @@
     "ts-jest": "^27.1.3",
     "ts-node": "^10.7.0",
     "typescript": "^4.6.2",
+    "use-context-selector": "^1.3.9",
     "vite": "^2.8.6"
   }
 }

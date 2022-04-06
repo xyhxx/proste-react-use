@@ -3,10 +3,10 @@
  * @FilePath: /proste-react-use/src/useEventEmitter.ts
  */
 
-import EventEmitter from 'events';
 import { useCallback, useEffect, useRef } from 'react';
+import { EventBus } from './utils';
 
-const event = new EventEmitter();
+const event = new EventBus();
 
 /**
  * 发布订阅钩子
@@ -29,18 +29,20 @@ function useEventEmitter<T>(key: string, listener?: (event: T) => void, once?: b
     function () {
       if (!listener) return;
 
+      let listen: (() => void) | null = null;
+
       if (once) {
         if (onceTragger.current) return;
-        event.once(key, function (e) {
+        listen = event.once<T>(key, function (e) {
           onceTragger.current = true;
           listener(e);
         });
       } else {
-        event.on(key, listener);
+        listen = event.on(key, listener);
       }
 
       return function () {
-        event.off(key, listener);
+        listen?.();
       };
     },
     [key, listener, once],

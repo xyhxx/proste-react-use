@@ -14,7 +14,7 @@
 
 - [`useContextWithEqual`](./docs/useContextWithEqual/cn.md)
 
-`比较相同 contexthook 判断返回数据是否有变化进行渲染 依赖 use-context-selector 使用 use-context-selector 的 createContext 创建 congtext`
+`比较相同 context 判断返回数据是否有变化进行渲染 依赖 use-context-selector。 使用 use-context-selector 的 createContext 创建 context。使用前请下载`[`use-context-selector`](https://github.com/dai-shi/use-context-selector)
 
 - [`useCountDown`](./docs/useCountDown/cn.md)
 
