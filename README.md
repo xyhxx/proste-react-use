@@ -4,6 +4,10 @@
 
 更多使用方法可以<a href="https://github.com/xyhxx/proste-react-use/tree/main/__tests__">查看测试</a>中的示例
 
+- [`useIntersectionObserver`](./docs/useIntersectionObserver/cn.md),[`useIntersectionObserverState`](./docs/useIntersectionObserverState/cn.md)
+
+`创建一个IntersectionObserver的API，useIntersectionObserver和useIntersectionObserverState的区别是useIntersectionObserver通过回调获取信息，useIntersectionObserverState会将回调的内容作为state返回。可以中断监听和恢复监听。`
+
 - [`useClipboard`](./docs/useClipboard/cn.md)
 
 `可以通过 ref 绑定某个 input 节点复制对应的 value 值， 这个在非受控节点 上会非常有用。 或者通过 copyToClipboard 复制到粘贴板`

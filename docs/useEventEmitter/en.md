@@ -16,9 +16,11 @@ function useEventEmitter<T>(key: string, listener?: (event: T) => void, once?: b
 const Son1: FC = function () {
   const [state, setState] = useState(0);
 
-  useEventEmitter<number | undefined>(KEY, function (e) {
+  const listener = useCallback(function (e) {
     setState(v => v + (e ?? 1));
-  });
+  }, []);
+
+  useEventEmitter<number | undefined>(KEY, listener);
 
   return (
     <>
@@ -29,13 +31,11 @@ const Son1: FC = function () {
 const Son2: FC = function () {
   const [state, setState] = useState(0);
 
-  useEventEmitter<number | undefined>(
-    KEY,
-    function (e) {
-      setState(v => v + (e ?? 1));
-    },
-    true,
-  );
+  const listener = useCallback(function (e) {
+    setState(v => v + (e ?? 1));
+  }, []);
+
+  useEventEmitter<number | undefined>(KEY, listener, true);
 
   return (
     <>

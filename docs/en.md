@@ -3,6 +3,10 @@
 More usage methods can be <a href="https://github.com/xyhxx/proste-react-use/tree/main/__tests__"> see examples in test
 </a>
 
+- [`useIntersectionObserver`](./docs/useIntersectionObserver/cn.md),[`useIntersectionObserverState`](./docs/useIntersectionObserverState/cn.md)
+
+`Create an API for IntersectionObserver. The difference between useIntersectionObserver and useIntersectionObserver state is that useIntersectionObserver obtains information through callback, and useIntersectionObserver state will return the callback content as state. You can interrupt listening and resume listening.`
+
 - [`useClipboard`](./useClipboard/en.md)
 
 `You can bind an input node through ref to copy the corresponding value value, which is very useful for uncontrolled nodes. Or copy to the pasteboard through copytoclipboard`

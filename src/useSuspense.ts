@@ -2,9 +2,8 @@
  * @Description: 可以通过suspense的方式渲染
  * @FilePath: /proste-react-use/src/useSuspense.ts
  */
-import isEqual from 'fast-deep-equal';
 import { useEffect, useRef } from 'react';
-import { isFunction, isString } from './utils';
+import { isEqual, isFunction, isString } from './utils';
 
 type SuspenseCache = {
   status: 'pending' | 'fulfil' | 'reject';

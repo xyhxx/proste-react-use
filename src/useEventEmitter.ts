@@ -25,23 +25,26 @@ const event = new EventEmitter();
 function useEventEmitter<T>(key: string, listener?: (event: T) => void, once?: boolean) {
   const onceTragger = useRef(false);
 
-  useEffect(function () {
-    if (!listener) return;
+  useEffect(
+    function () {
+      if (!listener) return;
 
-    if (once) {
-      if (onceTragger.current) return;
-      event.once(key, function (e) {
-        onceTragger.current = true;
-        listener(e);
-      });
-    } else {
-      event.on(key, listener);
-    }
+      if (once) {
+        if (onceTragger.current) return;
+        event.once(key, function (e) {
+          onceTragger.current = true;
+          listener(e);
+        });
+      } else {
+        event.on(key, listener);
+      }
 
-    return function () {
-      event.off(key, listener);
-    };
-  });
+      return function () {
+        event.off(key, listener);
+      };
+    },
+    [key, listener, once],
+  );
 
   return useCallback(
     (args?: T) => {

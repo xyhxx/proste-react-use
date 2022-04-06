@@ -1,5 +1,5 @@
 import { fireEvent, render, RenderResult } from '@testing-library/react';
-import React, { FC, useState } from 'react';
+import React, { FC, useCallback, useState } from 'react';
 import useEventEmitter from '../src/useEventEmitter';
 
 let app: RenderResult<
@@ -14,9 +14,11 @@ beforeEach(function () {
   const Son1: FC = function () {
     const [state, setState] = useState(0);
 
-    useEventEmitter<number | undefined>(KEY, function (e) {
+    const listener = useCallback(function (e) {
       setState(v => v + (e ?? 1));
-    });
+    }, []);
+
+    useEventEmitter<number | undefined>(KEY, listener);
 
     return (
       <>
@@ -27,13 +29,11 @@ beforeEach(function () {
   const Son2: FC = function () {
     const [state, setState] = useState(0);
 
-    useEventEmitter<number | undefined>(
-      KEY,
-      function (e) {
-        setState(v => v + (e ?? 1));
-      },
-      true,
-    );
+    const listener = useCallback(function (e) {
+      setState(v => v + (e ?? 1));
+    }, []);
+
+    useEventEmitter<number | undefined>(KEY, listener, true);
 
     return (
       <>

@@ -3,10 +3,10 @@
  * @FilePath: /proste-react-use/src/useContextWithEqual.ts
  */
 
-import isEqual from 'fast-deep-equal';
 import { useMemo } from 'react';
 import useLatest from './useLatest';
 import { Context, useContextSelector } from 'use-context-selector';
+import { isEqual } from './utils';
 
 /**
  * 比较相同contexthook 判断返回数据是否有变化进行渲染
@@ -16,8 +16,13 @@ import { Context, useContextSelector } from 'use-context-selector';
  * const {...} = useEqualContext(context, (v) => v.state);
  */
 
-function useContextWithEqual<T, R>(context: Context<T>, selector: (state: T) => R) {
+function useContextWithEqual<T, R>(
+  context: Context<T>,
+  selector: (state: T) => R,
+  equal?: (a: any, b: any) => boolean,
+) {
   const f = useLatest(selector);
+  const memoEqual = useLatest(equal);
 
   const callback = useMemo(
     function () {
@@ -26,7 +31,9 @@ function useContextWithEqual<T, R>(context: Context<T>, selector: (state: T) => 
       return function (state: T) {
         const newState = f.current(state);
 
-        if (!memoState || !isEqual(memoState, newState)) return (memoState = newState);
+        const equalFn = memoEqual.current || isEqual;
+
+        if (!memoState || !equalFn(memoState, newState)) return (memoState = newState);
 
         return memoState;
       };
