@@ -10,7 +10,7 @@ import { DependencyList, EffectCallback, useEffect, useRef } from 'react';
  *
  * @example
  *
- * useUpdateEffectFn(() => {
+ * useUpdatedEffect(() => {
  * ...
  * }, [xxx]);
  */

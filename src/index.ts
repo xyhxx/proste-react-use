@@ -7,5 +7,8 @@ export { default as useEventEmitter } from './useEventEmitter';
 export { default as useSuspense } from './useSuspense';
 export { default as useCountDown } from './useCountDown';
 export { default as useClipboard } from './useClipboard';
+export { default as useUpdatedLayoutEffect } from './useUpdatedLayoutEffect';
+export { default as useWindowFocus } from './useWindowFocus';
+export { default as useJWT } from './useJWT';
 
 export type { Options, DateType } from './useCountDown';

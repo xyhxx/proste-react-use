@@ -3,7 +3,11 @@
 More usage methods can be <a href="https://github.com/xyhxx/proste-react-use/tree/main/__tests__"> see examples in test
 </a>
 
-- [`useIntersectionObserver`](./docs/useIntersectionObserver/cn.md),[`useIntersectionObserverState`](./docs/useIntersectionObserverState/cn.md)
+- [`useJWT`](./useJWT/en.md)
+
+`decode jwt hook`
+
+- [`useIntersectionObserver`](./useIntersectionObserver/en.md),[`useIntersectionObserverState`](./useIntersectionObserverState/en.md)
 
 `Create an API for IntersectionObserver. The difference between useIntersectionObserver and useIntersectionObserver state is that useIntersectionObserver obtains information through callback, and useIntersectionObserver state will return the callback content as state. Both can interrupt listening and resume listening.`
 
@@ -28,18 +32,14 @@ More usage methods can be <a href="https://github.com/xyhxx/proste-react-use/tre
 
 `Publish subscribe hook. The Event instance is initialized only once globally`
 
-- [`useLayoutMounted`](./useLayoutMounted/en.md)
+- [`useMounted`](./useMounted/en.md),[`useLayoutMounted`](./useLayoutMounted/en.md)
 
-`useLayout is triggered only once`
-
-- [`useMounted`](./useMounted/en.md)
-
-`useEffect is triggered only once when loading`
+`triggered only once when loading`
 
 - [`useSuspense`](./useSuspense/en.md)
 
 `Any promise function can be used with the suspend component. The key must be a unique value. If you want to reuse the information of the parent component, you can use the same key as the parent component`
 
-- [`useUpdateEffect`](./useUpdateEffect/en.md)
+- [`useUpdateEffect`](./useUpdateEffect/en.md),[`useUpdatedLayoutEffect`](./useUpdatedLayoutEffect/en.md)
 
 `Triggered only in dependent updates (except for the first time)`

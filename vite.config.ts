@@ -16,13 +16,14 @@ export default defineConfig({
       fileName: format => `${format}/index.js`,
     },
     rollupOptions: {
-      external: ['react', 'fast-deep-equal', 'use-context-selector', 'dayjs'],
+      external: ['react', 'fast-deep-equal', 'use-context-selector', 'dayjs', 'jwt-decode'],
       output: {
         globals: {
           react: 'react',
           'fast-deep-equal': 'fast-deep-equal',
           dayjs: 'dayjs',
           'use-context-selector': 'use-context-selector',
+          'jwt-decode': 'jwt-decode',
         },
       },
     },
