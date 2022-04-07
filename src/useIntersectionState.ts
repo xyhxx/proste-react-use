@@ -25,7 +25,10 @@ function useIntersectionObserverState(options: {
   threshold?: number[];
   root?: MutableRefObject<any>;
   rootMargin?: string;
-}) {
+}): [
+  state: IntersectionObserverEntry[],
+  action: { readonly reObserver: () => void; readonly disconnect: () => void },
+] {
   const { el, threshold, root, rootMargin } = options;
   const [state, setState] = useState<IntersectionObserverEntry[]>([]);
 
@@ -41,7 +44,7 @@ function useIntersectionObserverState(options: {
     rootMargin,
   });
 
-  return [state, { reObserver, disconnect }] as const;
+  return [state, { reObserver, disconnect }];
 }
 
 export default useIntersectionObserverState;
