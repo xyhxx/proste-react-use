@@ -4,6 +4,10 @@
 
 更多使用方法可以<a href="https://github.com/xyhxx/proste-react-use/tree/main/__tests__">查看测试</a>中的示例
 
+- [`useMemory`](./docs/useMemory/cn.md)
+
+`获取当前内存信息。 useMemory使用的是performance.memory API，是谷歌浏览器提供的非标准扩展，注意使用方式！`
+
 - [`useJWT`](./docs/useJWT/cn.md)
 
 `解码jwt hook`

@@ -3,6 +3,10 @@
 More usage methods can be <a href="https://github.com/xyhxx/proste-react-use/tree/main/__tests__"> see examples in test
 </a>
 
+- [`useMemory`](./useMemory/en.md)
+
+`Get current memory information. use-memory uses performance.memory API is a non-standard extension provided by Google browser. Please use it carefully!`
+
 - [`useJWT`](./useJWT/en.md)
 
 `decode jwt hook`

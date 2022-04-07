@@ -10,5 +10,7 @@ export { default as useClipboard } from './useClipboard';
 export { default as useUpdatedLayoutEffect } from './useUpdatedLayoutEffect';
 export { default as useWindowFocus } from './useWindowFocus';
 export { default as useJWT } from './useJWT';
+export { default as useMemory } from './useMemory';
 
 export type { Options, DateType } from './useCountDown';
+export type { MemoryInfo } from './useMemory';
