@@ -4,6 +4,10 @@
 
 更多使用方法可以<a href="https://github.com/xyhxx/proste-react-use/tree/main/__tests__">查看测试</a>中的示例
 
+- [`useRequestAnimationFrame`](./docs/useRequestAnimationFrame/cn.md)
+
+`requestAnimationFrame hook`
+
 - [`useMemory`](./docs/useMemory/cn.md)
 
 `获取当前内存信息。 useMemory使用的是performance.memory API，是谷歌浏览器提供的非标准扩展，注意使用方式！`
@@ -22,7 +26,7 @@
 
 - [`useContextWithEqual`](./docs/useContextWithEqual/cn.md)
 
-`比较相同 context 判断返回数据是否有变化进行渲染 依赖 use-context-selector。 使用 use-context-selector 的 createContext 创建 context。使用前请下载`[`use-context-selector`](https://github.com/dai-shi/use-context-selector)
+`比较相同 context 判断返回数据是否有变化进行渲染 依赖 `[`use-context-selector`](https://github.com/dai-shi/use-context-selector)`。 使用 use-context-selector 的 createContext 创建 context。`
 
 - [`useCountDown`](./docs/useCountDown/cn.md)
 

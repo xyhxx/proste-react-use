@@ -3,6 +3,10 @@
 More usage methods can be <a href="https://github.com/xyhxx/proste-react-use/tree/main/__tests__"> see examples in test
 </a>
 
+- [`useRequestAnimationFrame`](./useRequestAnimationFrame/en.md)
+
+`requestAnimationFrame hook`
+
 - [`useMemory`](./useMemory/en.md)
 
 `Get current memory information. use-memory uses performance.memory API is a non-standard extension provided by Google browser. Please use it carefully!`
@@ -11,7 +15,8 @@ More usage methods can be <a href="https://github.com/xyhxx/proste-react-use/tre
 
 `decode jwt hook`
 
-- [`useIntersectionObserver`](./useIntersectionObserver/en.md),[`useIntersectionObserverState`](./useIntersectionObserverState/en.md)
+- [`useIntersectionObserver`](./useIntersectionObserver/en.md),
+  [`useIntersectionObserverState`](./useIntersectionObserverState/en.md)
 
 `Create an API for IntersectionObserver. The difference between useIntersectionObserver and useIntersectionObserver state is that useIntersectionObserver obtains information through callback, and useIntersectionObserver state will return the callback content as state. Both can interrupt listening and resume listening.`
 
@@ -21,8 +26,7 @@ More usage methods can be <a href="https://github.com/xyhxx/proste-react-use/tre
 
 - [`useContextWithEqual`](./useContextWithEqual/en.md)
 
-`Comparing the same context to judge whether the returned data has changed for rendering depends on use-context-selector. Create context using createcontext of use-context-selector. Please download`
-[`use-context-selector`](https://github.com/dai-shi/use-context-selector)` before use`
+`Comparing the same context to judge whether the returned data has changed for rendering depends on use-context-selector. Create context using createcontext of `[`use-context-selector`](https://github.com/dai-shi/use-context-selector)
 
 - [`useCountDown`](./useCountDown/en.md)
 
@@ -36,7 +40,7 @@ More usage methods can be <a href="https://github.com/xyhxx/proste-react-use/tre
 
 `Publish subscribe hook. The Event instance is initialized only once globally`
 
-- [`useMounted`](./useMounted/en.md),[`useLayoutMounted`](./useLayoutMounted/en.md)
+- [`useMounted`](./useMounted/en.md), [`useLayoutMounted`](./useLayoutMounted/en.md)
 
 `triggered only once when loading`
 
@@ -44,6 +48,6 @@ More usage methods can be <a href="https://github.com/xyhxx/proste-react-use/tre
 
 `Any promise function can be used with the suspend component. The key must be a unique value. If you want to reuse the information of the parent component, you can use the same key as the parent component`
 
-- [`useUpdateEffect`](./useUpdateEffect/en.md),[`useUpdatedLayoutEffect`](./useUpdatedLayoutEffect/en.md)
+- [`useUpdateEffect`](./useUpdateEffect/en.md), [`useUpdatedLayoutEffect`](./useUpdatedLayoutEffect/en.md)
 
 `Triggered only in dependent updates (except for the first time)`

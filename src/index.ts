@@ -11,6 +11,7 @@ export { default as useUpdatedLayoutEffect } from './useUpdatedLayoutEffect';
 export { default as useWindowFocus } from './useWindowFocus';
 export { default as useJWT } from './useJWT';
 export { default as useMemory } from './useMemory';
+export { default as useRequestAnimationFrame } from './useRequestAnimationFrame';
 
 export type { Options, DateType } from './useCountDown';
 export type { MemoryInfo } from './useMemory';
