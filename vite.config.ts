@@ -16,7 +16,14 @@ export default defineConfig({
       fileName: format => `${format}/index.js`,
     },
     rollupOptions: {
-      external: ['react', 'fast-deep-equal', 'use-context-selector', 'dayjs', 'jwt-decode'],
+      external: [
+        'react',
+        'fast-deep-equal',
+        'use-context-selector',
+        'dayjs',
+        'jwt-decode',
+        'bezier-easing',
+      ],
       output: {
         globals: {
           react: 'react',
@@ -24,6 +31,7 @@ export default defineConfig({
           dayjs: 'dayjs',
           'use-context-selector': 'use-context-selector',
           'jwt-decode': 'jwt-decode',
+          'bezier-easing': 'bezier-easing',
         },
       },
     },

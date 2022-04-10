@@ -12,6 +12,9 @@ export { default as useWindowFocus } from './useWindowFocus';
 export { default as useJWT } from './useJWT';
 export { default as useMemory } from './useMemory';
 export { default as useRequestAnimationFrame } from './useRequestAnimationFrame';
+export { default as useTransition } from './useTransition';
+export * from './utils/easingFunction';
 
-export type { Options, DateType } from './useCountDown';
+export type { Options as UseCountDownOptions, DateType } from './useCountDown';
 export type { MemoryInfo } from './useMemory';
+export type { Options as UseTransitionOptions } from './useTransition';

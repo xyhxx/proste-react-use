@@ -4,41 +4,7 @@
 
 更多使用方法可以<a href="https://github.com/xyhxx/proste-react-use/tree/main/__tests__">查看测试</a>中的示例
 
-- [`useRequestAnimationFrame`](./docs/useRequestAnimationFrame/cn.md)
-
-`requestAnimationFrame hook`
-
-- [`useMemory`](./docs/useMemory/cn.md)
-
-`获取当前内存信息。 useMemory使用的是performance.memory API，是谷歌浏览器提供的非标准扩展，注意使用方式！`
-
-- [`useJWT`](./docs/useJWT/cn.md)
-
-`解码jwt hook`
-
-- [`useIntersectionObserver`](./docs/useIntersectionObserver/cn.md),[`useIntersectionObserverState`](./docs/useIntersectionObserverState/cn.md)
-
-`创建一个IntersectionObserver的API，useIntersectionObserver和useIntersectionObserverState的区别是useIntersectionObserver通过回调获取信息，useIntersectionObserverState会将回调的内容作为state返回。两者都可以中断监听和恢复监听。`
-
-- [`useClipboard`](./docs/useClipboard/cn.md)
-
-`可以通过 ref 绑定某个 input 节点复制对应的 value 值， 这个在非受控节点 上会非常有用。 或者通过 copyToClipboard 复制到粘贴板`
-
-- [`useContextWithEqual`](./docs/useContextWithEqual/cn.md)
-
-`比较相同 context 判断返回数据是否有变化进行渲染 依赖 `[`use-context-selector`](https://github.com/dai-shi/use-context-selector)`。 使用 use-context-selector 的 createContext 创建 context。`
-
-- [`useCountDown`](./docs/useCountDown/cn.md)
-
-`倒计时信息。如果设置了 targetDate 后继续配置 days 等参数 会在 targetDate 的基础上累加。`
-
-- [`useDelay`](./docs/useDelay/cn.md)
-
-`可以主动调用的延迟函数，返回一个函数，函数执行延迟调用传入的函数。`
-
-- [`useEventEmitter`](./docs/useEventEmitter/cn.md)
-
-`发布订阅钩子，实例只在全局初始化一次。`
+## 生命周期
 
 - [`useMounted`](./docs/useMounted/cn.md),[`useLayoutMounted`](./docs/useLayoutMounted/cn.md)
 
@@ -51,3 +17,51 @@
 - [`useUpdateEffect`](./docs/useUpdateEffect/cn.md),[`useUpdatedLayoutEffect`](./docs/useUpdatedLayoutEffect/cn.md)
 
 `只有在依赖更新（除了第一次）触发`
+
+## Web API
+
+- [`useRequestAnimationFrame`](./docs/useRequestAnimationFrame/cn.md)
+
+`requestAnimationFrame hook`
+
+- [`useMemory`](./docs/useMemory/cn.md)
+
+`获取当前内存信息。 useMemory使用的是performance.memory API，是谷歌浏览器提供的非标准扩展，注意使用方式！`
+
+- [`useIntersectionObserver`](./docs/useIntersectionObserver/cn.md),[`useIntersectionObserverState`](./docs/useIntersectionObserverState/cn.md)
+
+`创建一个IntersectionObserver的API，useIntersectionObserver和useIntersectionObserverState的区别是useIntersectionObserver通过回调获取信息，useIntersectionObserverState会将回调的内容作为state返回。两者都可以中断监听和恢复监听。`
+
+- [`useClipboard`](./docs/useClipboard/cn.md)
+
+`可以通过 ref 绑定某个 input 节点复制对应的 value 值， 这个在非受控节点 上会非常有用。 或者通过 copyToClipboard 复制到粘贴板`
+
+## 动画
+
+- [`useTransition`](./docs/useTransition/cn.md)
+
+`数字缓动动画 内置部分缓动动画函数`
+
+## 状态
+
+- [`useContextWithEqual`](./docs/useContextWithEqual/cn.md)
+
+`比较相同 context 判断返回数据是否有变化进行渲染 依赖 `[`use-context-selector`](https://github.com/dai-shi/use-context-selector)`。 使用 use-context-selector 的 createContext 创建 context。`
+
+## 工具
+
+- [`useJWT`](./docs/useJWT/cn.md)
+
+`解码jwt hook`
+
+- [`useCountDown`](./docs/useCountDown/cn.md)
+
+`倒计时信息。如果设置了 targetDate 后继续配置 days 等参数 会在 targetDate 的基础上累加。`
+
+- [`useDelay`](./docs/useDelay/cn.md)
+
+`可以主动调用的延迟函数，返回一个函数，函数执行延迟调用传入的函数。`
+
+- [`useEventEmitter`](./docs/useEventEmitter/cn.md)
+
+`发布订阅钩子，实例只在全局初始化一次。`
