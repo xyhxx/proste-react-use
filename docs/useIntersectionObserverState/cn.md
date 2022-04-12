@@ -11,7 +11,7 @@ function useIntersectionObserverState(options: {
 }): readonly [
   IntersectionObserverEntry[],
   {
-    readonly reObserver: () => void;
+    readonly reconnect: () => void;
     readonly disconnect: () => void;
   },
 ];

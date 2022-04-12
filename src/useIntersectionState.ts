@@ -27,7 +27,7 @@ function useIntersectionObserverState(options: {
   rootMargin?: string;
 }): [
   state: IntersectionObserverEntry[],
-  action: { readonly reObserver: () => void; readonly disconnect: () => void },
+  action: { readonly reconnect: () => void; readonly disconnect: () => void },
 ] {
   const { el, threshold, root, rootMargin } = options;
   const [state, setState] = useState<IntersectionObserverEntry[]>([]);
@@ -36,7 +36,7 @@ function useIntersectionObserverState(options: {
     setState(e);
   }, []);
 
-  const { reObserver, disconnect } = useIntersectionObserver({
+  const { reconnect, disconnect } = useIntersectionObserver({
     el,
     onChange,
     threshold,
@@ -44,7 +44,7 @@ function useIntersectionObserverState(options: {
     rootMargin,
   });
 
-  return [state, { reObserver, disconnect }];
+  return [state, { reconnect, disconnect }];
 }
 
 export default useIntersectionObserverState;

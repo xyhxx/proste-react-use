@@ -17,7 +17,7 @@ import { isEqual, isString } from './utils';
     console.log(entry);
     }, []);
 
-    const { reObserver, disconnect } = useIntersectionObserver({
+    const { reconnect, disconnect } = useIntersectionObserver({
       el: '.pdom',
       onChange: callback,
     });
@@ -49,7 +49,7 @@ function useIntersectionObserver(options: {
     [threshold],
   );
 
-  const reObserver = useCallback(function () {
+  const reconnect = useCallback(function () {
     setIdent(v => v + 1);
     isDispose.current = false;
   }, []);
@@ -96,7 +96,7 @@ function useIntersectionObserver(options: {
     [el, onChange, root, rootMargin, thresholds, ident],
   );
 
-  return { reObserver, disconnect } as const;
+  return { reconnect, disconnect } as const;
 }
 
 export default useIntersectionObserver;

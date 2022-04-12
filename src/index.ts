@@ -13,6 +13,7 @@ export { default as useJWT } from './useJWT';
 export { default as useMemory } from './useMemory';
 export { default as useRequestAnimationFrame } from './useRequestAnimationFrame';
 export { default as useTransition } from './useTransition';
+export { default as useAsyncLock } from './useAsyncLock';
 export * from './utils/easingFunction';
 
 export type { Options as UseCountDownOptions, DateType } from './useCountDown';

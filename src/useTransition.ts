@@ -1,8 +1,7 @@
 import { useLayoutEffect, useMemo, useRef, useState } from 'react';
 import useLatest from './useLatest';
 import useRequestAnimationFrame from './useRequestAnimationFrame';
-import { EasingFunctionOrList, isArray, isNumber, LINEAR } from './utils';
-import isEqual from 'fast-deep-equal';
+import { EasingFunctionOrList, isArray, isNumber, LINEAR, isEqual } from './utils';
 import easing from 'bezier-easing';
 
 export type Options = {

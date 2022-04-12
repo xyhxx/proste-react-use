@@ -65,3 +65,7 @@ More usage methods can be <a href="https://github.com/xyhxx/proste-react-use/tre
 - [`useEventEmitter`](./useEventEmitter/en.md)
 
 `Publish subscribe hook. The Event instance is initialized only once globally`
+
+- [`useAsyncLock`](./useAsyncLock/en.md)
+
+`Asynchronous function lock. When the asynchronous function is executed, it will not be executed again, and an undefind will be returned.`

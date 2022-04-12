@@ -1,7 +1,7 @@
 ## useIntersectionObserver
 
 > Intersectionobserver API hook.If you want to disconnect listening, use disconnect. If you want to resume listening,
-> use reobserver
+> use reconnect. If the listening content is not rebinding after DOM changes, you can call reconnect to listen again
 
 ```typescript
 function useIntersectionObserver(options: {
@@ -11,7 +11,7 @@ function useIntersectionObserver(options: {
   root?: MutableRefObject<any>;
   rootMargin?: string;
 }): {
-  readonly reObserver: () => void;
+  readonly reconnect: () => void;
   readonly disconnect: () => void;
 };
 ```
@@ -21,7 +21,7 @@ const callback = useCallback(function (entry) {
   console.log(entry);
 }, []);
 
-const { reObserver, disconnect } = useIntersectionObserver({
+const { reconnect, disconnect } = useIntersectionObserver({
   el: '.pdom',
   onChange: callback,
 });
