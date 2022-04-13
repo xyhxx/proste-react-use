@@ -36,6 +36,10 @@
 
 `可以通过 ref 绑定某个 input 节点复制对应的 value 值， 这个在非受控节点 上会非常有用。 或者通过 copyToClipboard 复制到粘贴板`
 
+- [`useEyeDropper`](./docs/useEyeDropper/cn.md)
+
+`屏幕取色器，可以获取当前屏幕上选中区域的颜色。`
+
 ## 动画
 
 - [`useTransition`](./docs/useTransition/cn.md)

@@ -36,6 +36,10 @@ More usage methods can be <a href="https://github.com/xyhxx/proste-react-use/tre
 
 `You can bind an input node through ref to copy the corresponding value value, which is very useful for uncontrolled nodes. Or copy to the pasteboard through copytoclipboard`
 
+- [`useEyeDropper`](./useEyeDropper/en.md)
+
+`屏幕取色器，可以获取当前屏幕上选中区域的颜色。`
+
 ## Animation
 
 - [`useTransition`](./useTransition/en.md)

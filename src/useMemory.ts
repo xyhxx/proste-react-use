@@ -16,6 +16,8 @@ type PerformanceType = Performance & { memory: MemoryInfo };
  * 当前页面不支持performance是所有值都为0
  * performance.memory是谷歌浏览器提供的非标准扩展，注意使用方式
  *
+ * @see https://developer.mozilla.org/zh-CN/docs/Web/API/Performance/memory
+ *
  * @example
  *
  * const { jsHeapSizeLimit, totalJSHeapSize, usedJSHeapSize } = useMemory();

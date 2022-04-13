@@ -4,6 +4,8 @@ import useLatest from './useLatest';
 /**
  * requestAnimationFrame hook
  *
+ * @see https://developer.mozilla.org/zh-CN/docs/Web/API/window/requestAnimationFrame
+ *
  * @example
  *
  * let start;
