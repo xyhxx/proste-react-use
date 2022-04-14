@@ -1,4 +1,4 @@
-import { useCallback, useLayoutEffect, useMemo, useState } from 'react';
+import { useCallback, useLayoutEffect, useRef, useState } from 'react';
 
 export type UseWebSocketOptions<T> = {
   protocols?: string | string[];
@@ -16,6 +16,7 @@ export type UseWebSocketOptions<T> = {
   );
  *
  */
+
 function useWebSocket<T>(
   url: string,
   options?: UseWebSocketOptions<T>,
@@ -24,7 +25,7 @@ function useWebSocket<T>(
   action: {
     send: (data: string | ArrayBufferLike | Blob | ArrayBufferView) => void;
     close: (code?: number | undefined, reason?: string | undefined) => void;
-    getStatus: () => number;
+    getStatus: () => number | undefined;
   },
 ] {
   const { protocols, onMessage, onError } = options ?? {};
@@ -33,36 +34,33 @@ function useWebSocket<T>(
     error: null,
   });
 
-  const socket = useMemo(
-    function () {
-      return new WebSocket(url, protocols);
-    },
-    [protocols, url],
-  );
+  const socket = useRef<WebSocket | null>(null);
 
   const send = useCallback(
     function (data: string | ArrayBufferLike | Blob | ArrayBufferView) {
-      socket.send(data);
+      socket.current?.send(data);
     },
     [socket],
   );
 
   const close = useCallback(
     function (code?: number, reason?: string) {
-      socket.close(code, reason);
+      socket.current?.close(code, reason);
     },
     [socket],
   );
 
   const getStatus = useCallback(
     function () {
-      return socket.readyState;
+      return socket.current?.readyState;
     },
     [socket],
   );
 
   useLayoutEffect(
     function () {
+      socket.current = new WebSocket(url, protocols);
+
       function message(e: MessageEvent<T>) {
         setState(function (state) {
           return { ...state, data: e.data };
@@ -73,15 +71,17 @@ function useWebSocket<T>(
         onError?.(e);
       }
 
-      socket.addEventListener('message', message);
-      socket.addEventListener('error', error);
+      socket.current.addEventListener('message', message);
+      socket.current.addEventListener('error', error);
 
       return function () {
-        socket.removeEventListener('message', message);
-        socket.removeEventListener('error', error);
+        socket.current?.removeEventListener('message', message);
+        socket.current?.removeEventListener('error', error);
+        socket.current?.close();
+        socket.current = null;
       };
     },
-    [onError, onMessage, socket],
+    [onError, onMessage, protocols, socket, url],
   );
 
   return [
