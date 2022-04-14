@@ -4,7 +4,7 @@ import useRequestAnimationFrame from './useRequestAnimationFrame';
 import { EasingFunctionOrList, isArray, isNumber, LINEAR, isEqual } from './utils';
 import easing from 'bezier-easing';
 
-export type Options = {
+export type UseTransitionOptions = {
   duration?: number;
   delay?: number;
   transition?: EasingFunctionOrList;
@@ -25,9 +25,12 @@ type VoidFunction = () => void;
  * setState(val => val === 0 ? 10 : 0);
  */
 
-export function useTransition(value: number, options?: Options): number;
-export function useTransition(value: number[], options?: Options): number[];
-export function useTransition(value: number | number[], options?: Options): number | number[] {
+export function useTransition(value: number, options?: UseTransitionOptions): number;
+export function useTransition(value: number[], options?: UseTransitionOptions): number[];
+export function useTransition(
+  value: number | number[],
+  options?: UseTransitionOptions,
+): number | number[] {
   const resultIsNumber = isNumber(value);
   let target = useMemo(
     function () {

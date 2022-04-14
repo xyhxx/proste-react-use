@@ -40,6 +40,10 @@
 
 `屏幕取色器，可以获取当前屏幕上选中区域的颜色。`
 
+- [`useWebSocket`](./docs/useWebSocket/cn.md)
+
+`web socket hook`
+
 ## 动画
 
 - [`useTransition`](./docs/useTransition/cn.md)

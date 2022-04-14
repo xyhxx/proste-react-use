@@ -11,7 +11,7 @@ type EasingFunction = (x: number) => number;
 type EasingList = [number, number, number, number];
 type EasingFunctionOrList = EasingFunction | EasingList;
 
-type Options = {
+type UseTransitionOptions = {
   duration?: number;
   delay?: number;
   transition?: EasingFunctionOrList;

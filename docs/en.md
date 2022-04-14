@@ -38,7 +38,11 @@ More usage methods can be <a href="https://github.com/xyhxx/proste-react-use/tre
 
 - [`useEyeDropper`](./useEyeDropper/en.md)
 
-`屏幕取色器，可以获取当前屏幕上选中区域的颜色。`
+`The screen color finder can obtain the color of the selected area on the current screen and use the Web API.`
+
+- [`useWebSocket`](./useWebSocket/en.md)
+
+`web socket hook`
 
 ## Animation
 

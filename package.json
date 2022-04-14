@@ -1,6 +1,6 @@
 {
   "name": "proste-react-use",
-  "version": "3.1.0",
+  "version": "3.2.0",
   "description": "Eeasy to use react hooks",
   "license": "MIT",
   "author": "xyh xx<xyh050968@gmail.com>",
@@ -78,6 +78,7 @@
     "react": "^18.0.0",
     "react-dom": "^18.0.0",
     "react-test-renderer": "^18.0.0",
+    "stylelint": "^14.6.1",
     "stylelint-config-prettier": "^9.0.3",
     "stylelint-config-recess-order": "^3.0.0",
     "stylelint-config-standard": "^25.0.0",

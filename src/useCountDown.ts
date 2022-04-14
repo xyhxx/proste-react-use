@@ -8,7 +8,7 @@ import { useEffect, useMemo, useState } from 'react';
 import useLatest from './useLatest';
 
 type DateType = string | number | Date;
-type Options = {
+type UseCountDownOptions = {
   targetDate?: DateType;
   days?: number;
   hours?: number;
@@ -44,7 +44,7 @@ function parseDiffTime(ms: number) {
  *
  * const {day, hours, minutes, seconds, milliseconds} = useCountDown({endTime: '2020-01-01 00:00:00'});
  */
-function useCountDown(options?: Options) {
+function useCountDown(options?: UseCountDownOptions) {
   const { targetDate, days, hours, minutes, seconds, onChange, onComplete, interval } =
     options || {};
 
@@ -116,4 +116,4 @@ function useCountDown(options?: Options) {
 }
 
 export default useCountDown;
-export type { Options, DateType };
+export type { UseCountDownOptions, DateType };

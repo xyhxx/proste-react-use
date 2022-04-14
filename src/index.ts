@@ -15,8 +15,10 @@ export { default as useRequestAnimationFrame } from './useRequestAnimationFrame'
 export { default as useTransition } from './useTransition';
 export { default as useAsyncLock } from './useAsyncLock';
 export { default as useEyeDropper } from './useEyeDropper';
+export { default as useWebSocket } from './useWebSocket';
 export * from './utils/easingFunction';
 
-export type { Options as UseCountDownOptions, DateType } from './useCountDown';
+export type { UseCountDownOptions, DateType } from './useCountDown';
 export type { MemoryInfo } from './useMemory';
-export type { Options as UseTransitionOptions } from './useTransition';
+export type { UseTransitionOptions } from './useTransition';
+export type { UseWebSocketOptions } from './useWebSocket';
