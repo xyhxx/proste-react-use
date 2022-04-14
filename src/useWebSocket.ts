@@ -68,6 +68,9 @@ function useWebSocket<T>(
         onMessage?.(e);
       }
       function error(e: Event) {
+        setState(function (state) {
+          return { ...state, error: e };
+        });
         onError?.(e);
       }
 
