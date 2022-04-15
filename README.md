@@ -77,3 +77,7 @@
 - [`useAsyncLock`](./docs/useAsyncLock/cn.md)
 
 `异步函数锁，在异步函数执行完成执行不会再执行，会返回一个 undefind。`
+
+- [`useMoneyFormat`](./docs/useMoneyFormat/cn.md)
+
+`格式化货币金额`
