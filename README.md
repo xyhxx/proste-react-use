@@ -85,3 +85,7 @@
 - [`useMoneyFormat`](./docs/useMoneyFormat/cn.md)
 
 `格式化货币金额`
+
+- [`useClassNames`](./docs/useClassNames/cn.md)
+
+`将各种类型的数据合并成一个 string 类型返回用于 className`

@@ -17,6 +17,7 @@ export { default as useAsyncLock } from './useAsyncLock';
 export { default as useEyeDropper } from './useEyeDropper';
 export { default as useWebSocket } from './useWebSocket';
 export { default as useMoneyFormat } from './useMoneyFormat';
+export { default as useClassNames } from './useClassNames';
 export * from './utils/easingFunction';
 
 export type { UseCountDownOptions, DateType } from './useCountDown';

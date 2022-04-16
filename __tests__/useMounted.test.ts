@@ -3,38 +3,40 @@ import useMounted from '../src/useMounted';
 
 const callback = jest.fn();
 
-beforeEach(function () {
-  jest.clearAllMocks();
-});
-
-test('可以正常触发', function () {
-  renderHook(function () {
-    useMounted(callback);
+describe('useMounted', function () {
+  beforeEach(function () {
+    jest.clearAllMocks();
   });
 
-  expect(callback).toHaveBeenCalledTimes(1);
-});
+  test('可以正常触发', function () {
+    renderHook(function () {
+      useMounted(callback);
+    });
 
-test('只触发一次', function () {
-  const { rerender } = renderHook(function () {
-    useMounted(callback);
+    expect(callback).toHaveBeenCalledTimes(1);
   });
 
-  expect(callback).toHaveBeenCalledTimes(1);
+  test('只触发一次', function () {
+    const { rerender } = renderHook(function () {
+      useMounted(callback);
+    });
 
-  rerender();
+    expect(callback).toHaveBeenCalledTimes(1);
 
-  expect(callback).toHaveBeenCalledTimes(1);
-});
+    rerender();
 
-test('卸载组件不触发', function () {
-  const { unmount } = renderHook(function () {
-    useMounted(callback);
+    expect(callback).toHaveBeenCalledTimes(1);
   });
 
-  expect(callback).toHaveBeenCalledTimes(1);
+  test('卸载组件不触发', function () {
+    const { unmount } = renderHook(function () {
+      useMounted(callback);
+    });
 
-  unmount();
+    expect(callback).toHaveBeenCalledTimes(1);
 
-  expect(callback).toHaveBeenCalledTimes(1);
+    unmount();
+
+    expect(callback).toHaveBeenCalledTimes(1);
+  });
 });

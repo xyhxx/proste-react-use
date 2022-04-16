@@ -85,3 +85,7 @@ More usage methods can be <a href="https://github.com/xyhxx/proste-react-use/tre
 - [`useMoneyFormat`](./useMoneyFormat/en.md)
 
 `Format currency amount`
+
+- [`useClassNames`](./useClassNames/en.md)
+
+`Merge various types of data into one string type and return it for className`
