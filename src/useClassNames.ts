@@ -2,7 +2,7 @@ import { useCallback } from 'react';
 import { isFunction } from './utils';
 
 type ObjectClassNames = Record<string, unknown>;
-type ClassNamesArgs = Array<ObjectClassNames | string | ClassNamesArgs>;
+type ClassNamesArgs = Array<ObjectClassNames | string | null | undefined | ClassNamesArgs>;
 
 /**
  * 将各种类型的数据合并成一个 string 类型返回用于className
@@ -26,13 +26,14 @@ function useClassNames() {
         const result = parseClassNames(...val);
         classNames.push(result);
       } else {
-        Object.keys(val).forEach(function (key) {
+        for (const key in val) {
+          if (!Object.prototype.hasOwnProperty.call(val, key)) continue;
           const value = val[key];
           const result = isFunction(value) ? value() : value;
           if (result) {
             classNames.push(key);
           }
-        });
+        }
       }
     });
 

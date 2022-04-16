@@ -4,7 +4,7 @@ import { renderHook } from '@testing-library/react-hooks';
 describe('useClassNames', function () {
   test('多字符串正常', function () {
     const { result } = renderHook(function () {
-      return useClassNames()('a', 'b', 'c');
+      return useClassNames()('a', 'b', 'c', null, undefined);
     });
 
     expect(result.current).toBe('a b c');
@@ -12,7 +12,7 @@ describe('useClassNames', function () {
 
   test('数组正常', function () {
     const { result } = renderHook(function () {
-      return useClassNames()(['a', 'b', 'c', 'd']);
+      return useClassNames()(['a', 'b', 'c', 'd', null, undefined]);
     });
 
     expect(result.current).toBe('a b c d');
@@ -32,6 +32,9 @@ describe('useClassNames', function () {
         i: {},
         g: () => true,
         k: () => false,
+        o: null,
+        p: undefined,
+        q: () => null,
       });
     });
 

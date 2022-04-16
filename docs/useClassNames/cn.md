@@ -4,7 +4,7 @@
 
 ```ts
 type ObjectClassNames = Record<string, unknown>;
-type ClassNamesArgs = Array<ObjectClassNames | string | ClassNamesArgs>;
+type ClassNamesArgs = Array<ObjectClassNames | string | null | undefined | ClassNamesArgs>;
 
 function useClassNames(): (...args: ClassNamesArgs) => string;
 ```
