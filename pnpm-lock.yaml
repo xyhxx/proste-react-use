@@ -15,7 +15,7 @@ specifiers:
   editorconfig: ^0.15.3
   eslint: ^8.11.0
   eslint-config-prettier: ^8.5.0
-  eslint-config-proste: ^2.6.1
+  eslint-config-proste: ^2.9.0
   eslint-plugin-import: ^2.25.4
   eslint-plugin-react: ^7.29.3
   eslint-plugin-react-hooks: ^4.3.0
@@ -58,7 +58,7 @@ devDependencies:
   editorconfig: 0.15.3
   eslint: 8.13.0
   eslint-config-prettier: 8.5.0_eslint@8.13.0
-  eslint-config-proste: 2.7.0_280d1eb07bbe32b50de30fc16c4c9b3e
+  eslint-config-proste: 2.9.0_280d1eb07bbe32b50de30fc16c4c9b3e
   eslint-plugin-import: 2.26.0_eslint@8.13.0
   eslint-plugin-react: 7.29.4_eslint@8.13.0
   eslint-plugin-react-hooks: 4.4.0_eslint@8.13.0
@@ -2071,8 +2071,8 @@ packages:
       eslint: 8.13.0
     dev: true
 
-  /eslint-config-proste/2.7.0_280d1eb07bbe32b50de30fc16c4c9b3e:
-    resolution: {integrity: sha512-E+cUZqmqltrJWVNJa3QFaO9gZBlPNgSjtgOOX6oerMEqplc6+IhttPhyTeThheIUypAkSe7CLy2kft0QNnrSVA==}
+  /eslint-config-proste/2.9.0_280d1eb07bbe32b50de30fc16c4c9b3e:
+    resolution: {integrity: sha512-a0Qtz8phttHP2IBIBD/wDqqYIbaEy/roeOQgcjhprKnuAaHYlcjkdV3ECj3JIaZP04VAwd5qj8wuFWGDMFQJXA==}
     peerDependencies:
       '@typescript-eslint/eslint-plugin': ^5.4.0
       '@typescript-eslint/parser': ^5.4.0

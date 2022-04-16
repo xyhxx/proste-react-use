@@ -44,6 +44,10 @@
 
 `web socket hook`
 
+- [`useBroadcastChannel`](./docs/useBroadcastChannel/cn.md)
+
+`BroadcastChannel 通讯 API`
+
 ## 动画
 
 - [`useTransition`](./docs/useTransition/cn.md)

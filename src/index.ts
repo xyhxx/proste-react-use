@@ -23,3 +23,4 @@ export type { UseCountDownOptions, DateType } from './useCountDown';
 export type { MemoryInfo } from './useMemory';
 export type { UseTransitionOptions } from './useTransition';
 export type { UseWebSocketOptions } from './useWebSocket';
+export type { UseBroadcastChannelOptions } from './useBroadcastChannel';

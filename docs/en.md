@@ -44,6 +44,10 @@ More usage methods can be <a href="https://github.com/xyhxx/proste-react-use/tre
 
 `web socket hook`
 
+- [`useBroadcastChannel`](./useBroadcastChannel/en.md)
+
+` BroadcastChannel Web API`
+
 ## Animation
 
 - [`useTransition`](./useTransition/en.md)
