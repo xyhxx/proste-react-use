@@ -60,6 +60,14 @@ More usage methods can be <a href="https://github.com/xyhxx/proste-react-use/tre
 
 `Comparing the same context to judge whether the returned data has changed for rendering depends on use-context-selector. Create context using createcontext of `[`use-context-selector`](https://github.com/dai-shi/use-context-selector)
 
+- [`useMap`](./useMap/en.md), [`useSet`](./useSet/en.md)
+
+`Map and Set hooks`
+
+- [`useWeakMap`](./useWeakMap/en.md), [`useWeakSet`](./useWeakSet/en.md)
+
+`WeakMap and WeakSet hooks`
+
 ## Utils
 
 - [`useJWT`](./useJWT/en.md)

@@ -18,6 +18,11 @@ export { default as useEyeDropper } from './useEyeDropper';
 export { default as useWebSocket } from './useWebSocket';
 export { default as useMoneyFormat } from './useMoneyFormat';
 export { default as useClassNames } from './useClassNames';
+export { default as useMap } from './useMap';
+export { default as useSet } from './useSet';
+export { default as useWeakSet } from './useWeakSet';
+export { default as useWeakMap } from './useWeakMap';
+
 export * from './utils/easingFunction';
 
 export type { UseCountDownOptions, DateType } from './useCountDown';
