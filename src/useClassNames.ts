@@ -1,8 +1,28 @@
-import { useCallback } from 'react';
+import { useCallback, useMemo } from 'react';
 import { isFunction } from './utils';
 
 type ObjectClassNames = Record<string, unknown>;
 type ClassNamesArgs = Array<ObjectClassNames | string | null | undefined | ClassNamesArgs>;
+type CSSModuleClasses = Record<string, string>;
+type UseClassNameOptions = {
+  prefix?: string;
+  styleSheet?: CSSModuleClasses;
+  camelTransition?: string;
+};
+
+function transition(source: string, prefix?: string) {
+  if (!prefix) return source;
+
+  const result = source.replace(/[A-Z]/g, function (val) {
+    return prefix + val.toLowerCase();
+  });
+
+  if (result[0] === prefix) {
+    return result.slice(1);
+  }
+
+  return result;
+}
 
 /**
  * 将各种类型的数据合并成一个 string 类型返回用于className
@@ -15,7 +35,27 @@ type ClassNamesArgs = Array<ObjectClassNames | string | null | undefined | Class
  * classNames(['a', 'b']); // 'a b'
  * classNames({a: () => true, b: () => false}); // 'a'
  */
-function useClassNames() {
+function useClassNames(options?: UseClassNameOptions) {
+  const { prefix, styleSheet, camelTransition } = options ?? {};
+
+  const style = useMemo(
+    function () {
+      return new Proxy(styleSheet ?? {}, {
+        get(target, key, receiver) {
+          if (typeof key === 'symbol') return '';
+          const name = transition(key, camelTransition);
+          const value = Reflect.get(target, name, receiver);
+
+          if (!value) return '';
+
+          const prefixStr = prefix ?? '';
+          return prefixStr + name;
+        },
+      });
+    },
+    [prefix, styleSheet, camelTransition],
+  );
+
   const parseClassNames = useCallback(function (...args: ClassNamesArgs) {
     const classNames: string[] = [];
 
@@ -40,7 +80,7 @@ function useClassNames() {
     return classNames.join(' ');
   }, []);
 
-  return parseClassNames;
+  return [style, parseClassNames] as const;
 }
 
 export default useClassNames;
