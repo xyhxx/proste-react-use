@@ -49,7 +49,7 @@ function useClassNames(options?: UseClassNameOptions) {
           if (!value) return '';
 
           const prefixStr = prefix ?? '';
-          return prefixStr + name;
+          return prefixStr + value;
         },
       });
     },
